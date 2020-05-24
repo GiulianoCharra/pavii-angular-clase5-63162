@@ -1,0 +1,10 @@
+<app-menu></app-menu>
+<h1 *ngIf="verMateria">{{ materia }}</h1>
+<img [src]="logo" />
+<!--img src={{logo}} /> -->
+<p [style.color]="colorParrafo">{{ mensaje }}!</p>
+<!--p style="color:{{ colorParrafo }}">{{ mensaje }}!</p-->
+Esta es la Pagina Principal clase 4
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

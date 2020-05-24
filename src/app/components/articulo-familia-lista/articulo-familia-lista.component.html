@@ -1,0 +1,14 @@
+<table class="table table-striped">
+  <thead class="thead-inverse">
+    <tr>
+      <th>ID del Articulo</th>
+      <th>Nombre</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let art of listaArticulos">
+      <td>{{ art.IdArticuloFamilia }}</td>
+      <td>{{ art.Nombre }}</td>
+    </tr>
+  </tbody>
+</table>
