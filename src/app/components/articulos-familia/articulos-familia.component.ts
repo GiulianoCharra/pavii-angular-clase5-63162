@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  FormControl,
+} from '@angular/forms';
 import { ArticulosFamilias } from '../../models/articulosfamilias.collection';
 
 @Component({
@@ -35,9 +40,9 @@ export class ArticulosFamiliaComponent implements OnInit {
 
   Guardar() {
     if (this.fg.valid) {
-      console.log(
-        `id:${this.fg.value.IdArticuloFamilia} nombre: ${this.fg.value.Nombre}`
-      );
+      let fc = this.fg.value.IdArticuloFamilia as FormControl;
+      fc.markAsUntouched();
+      fc.markAsPristine();
       ArticulosFamilias.push({
         IdArticuloFamilia: Number(this.fg.value.IdArticuloFamilia),
         Nombre: this.fg.value.Nombre,
